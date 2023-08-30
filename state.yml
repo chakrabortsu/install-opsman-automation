@@ -1,0 +1,2 @@
+iaas: vsphere
+vm_id: /vc01/vm//ops-manager2
