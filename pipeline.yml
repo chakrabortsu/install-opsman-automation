@@ -72,19 +72,21 @@ jobs:
             params:
               repository: config-commit
               merge: true
+
 - name: download-upload-and-stage-tkgi
   serial: true
   plan:
-    - aggregate:
-      - get: platform-automation-image
-        params:
-          globs: ["*image*.tgz"]
-          unpack: true
-      - get: platform-automation-tasks
-        params:
-          globs: ["*tasks*.zip"]
-          unpack: true
-      - get: config
+    - get: platform-automation-image
+      resource: platform-automation
+      params:
+        globs: ["*image*.tgz"]
+        unpack: true
+    - get: platform-automation-tasks
+      resource: platform-automation
+      params:
+        globs: ["*tasks*.zip"]
+        unpack: true
+    - get: config
     - task: prepare-tasks-with-secrets
       image: platform-automation-image
       file: platform-automation-tasks/tasks/prepare-tasks-with-secrets.yml
@@ -103,4 +105,4 @@ jobs:
         CONFIG_FILE: download-tkgi.yml
       output_mapping:
         downloaded-product: tkgi-product
-        downloaded-stemcell: tkgi-stemcell   
+        downloaded-stemcell: tkgi-stemcell
