@@ -8,7 +8,7 @@ opsman-configuration:
       folder: /vc01/vm/ # RECOMMENDED, but not required
       url: vc01.h2o-2-16358.h2o.vmware.com
       username: administrator@vsphere.local	
-      password: ((vcenter-password))
+      password: masPD8g@NMdHSIi14!E
       resource_pool: /vc01/host/vc01cl01/Resources/RP-2-MGMT-TKGi
       # resource_pool can use a cluster - /example-dc/host/example-cluster
 
