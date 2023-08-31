@@ -131,7 +131,7 @@ jobs:
       params:
         globs: ["*image*.tgz"]
         unpack: true
-    - get: platform-automation-task
+    - get: platform-automation-tasks
       resource: platform-automation
       params:
         globs: ["*tasks*.zip"]
