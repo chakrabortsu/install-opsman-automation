@@ -126,7 +126,6 @@ jobs:
   plan:
     - get: platform-automation-image
       resource: platform-automation
-      passed: [download-upload-and-stage-tkgi]
       trigger: true
       params:
         globs: ["*image*.tgz"]
@@ -137,7 +136,6 @@ jobs:
         globs: ["*tasks*.zip"]
         unpack: true
     - get: config
-      passed: [download-upload-and-stage-tkgi]
     - task: prepare-tasks-with-secrets
       image: platform-automation-image
       file: platform-automation-tasks/tasks/prepare-tasks-with-secrets.yml
@@ -154,4 +152,5 @@ jobs:
         config: config
         env: config
       params:
-        CONFIG_FILE: tkgi-config.yml   
+        CONFIG_FILE: tkgi-config.yml 
+        ENV_FILE: env.yml
