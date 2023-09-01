@@ -62,7 +62,7 @@ product-properties:
   .properties.network_selector.nsx.service_cluster_cidr:
     value: 10.100.200.0/24
   .properties.network_selector.nsx.t0-router-id:
-    value: nsxt01-t0-tr
+    value: 16f02966-ad52-4b08-a16d-b2b35f255848
   .properties.network_selector.nsx.vcenter_cluster:
     value: vc01cl01
   .properties.node_exporter_deploy:
